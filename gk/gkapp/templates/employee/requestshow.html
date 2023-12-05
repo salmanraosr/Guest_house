@@ -1,0 +1,98 @@
+
+{% extends "staffbase.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+   <div class="container-fluid">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Guest House List</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>email</th>
+                                            <th>Mobile</th>
+                                            <th>id</th>
+                                            <th>No of Persons</th>
+                                            <th>no_of_rooms</th>
+                                            <th>checkin</th>
+                                            <th>checkout</th>
+                                            <th>request_datetime</th>
+                                             <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>email</th>
+                                            <th>Mobile</th>
+                                            <th>id</th>
+                                            <th>No of Persons</th>
+                                            <th>no_of_rooms</th>
+                                            <th>checkin</th>
+                                            <th>checkout</th>
+                                            <th>request_datetime</th>
+                                             <th>Actions</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+
+
+
+
+{% for employee in employees %}
+    <tr>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.mob }}</td>
+        <td>{{ employee.id_proof_no }}</td>
+         <td>{{ employee.no_of_persons}}</td>
+        <td>{{ employee.no_of_rooms }}</td>
+        <td>{{ employee.checkin }}</td>
+        <td>{{ employee.checkout }}</td>
+        <td>{{ employee.request_datetime }}</td>
+        <td>
+            <a class="btn btn-success" href="#"><span class="glyphicon glyphicon-pencil" >Approved</span></a>
+            <a  class="btn btn-danger" href="#">Declined</a>
+
+        </td>
+    </tr>
+{% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

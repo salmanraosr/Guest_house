@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{%load static %}
+{%block content%}
+<div class="container">
+  <div class="p-5 shadow">
+
+    <h2>Image Gallery</h2><hr>
+    <div class="d-flex center flex-wrap ">
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/reception.jpg'%}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">NIE-GH Reception</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/vipsuite1.jpeg'%}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">VIP Suite</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/vipsuite2.jpeg'%}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">VIP Suite</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/bedroom.jpg'%}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">NIE-GH Bedroom 1</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/bedroom2.jpg'%}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">NIE-GH Bedroom 2</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/bedroom_pgh.jpg'%}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">NIE-PGH Bedroom</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/bedroom_sharing.jpg'%}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">NIE-GH Sharing Bedroom</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/washroom.jpg' %}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">NIE-GH Washroom</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4">
+        <div class="card p-2" style="width: 18rem;">
+          <img src="{% static 'images/dining.jpg'%}" class="card-img-top" alt="..." data-toggle="modal" data-target="#nieghGallery">
+          <div class="card-body">
+            <p class="card-text">NIE-GH Dining Hall</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Image that triggers the modal -->
+  <!-- The Modal -->
+  <div id="nieghGallery" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'images/vipsuite1.jpeg'%}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/vipsuite2.jpeg'%}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/reception.jpg'%}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/bedroom.jpg'%}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/bedroom2.jpg'%}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/bedroom_pgh.jpg'%}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/bedroom_sharing.jpg'%}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/dining.jpg'%}" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/washroom.jpg'%}" class="d-block w-100">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" ></script>
+</div>
+{% endblock %}

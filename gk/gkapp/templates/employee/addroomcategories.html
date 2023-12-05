@@ -1,0 +1,52 @@
+
+{% extends "staffbase.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+   <div class="container-fluid">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Guest House List</h6>
+                        </div>
+                        <div class="card-body">
+                             <form action="{% url 'addroomcategories' %}" method="POST" novalidate>
+                      {% csrf_token %}
+                         {% for field in form.visible_fields %}
+                           <div class="form-group">
+                               {{ field.label_tag }}
+                                  {% render_field field class="form-control" %}
+                         {% endfor %}
+                         <br>
+                             <input type="submit" value="approved" class="btn btn-block btn-primary">
+                           </div>
+                    </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

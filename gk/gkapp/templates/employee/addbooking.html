@@ -1,0 +1,122 @@
+
+{% extends "staffbase.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+   <div class="container-fluid">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Make a Booking</h6>
+                        </div>
+                        <div class="card-body">
+                             <form action="{% url 'addbooking' %}" method="POST" novalidate>
+                      {% csrf_token %}
+    <div class="row ">
+
+
+
+                        <div class="form-group mb-3">
+                               <label for="id_first_name">First name:</label>
+                                  <input type="text" name="first_name" maxlength="100" class="form-control" required id="id_first_name">
+
+                           <div class="form-group mb-3">
+                               <label for="id_last_name">Last name:</label>
+                                  <input type="text" name="last_name" maxlength="100" class="form-control" required id="id_last_name">
+
+                           <div class="form-group mb-3">
+                               <label for="id_address">Address:</label>
+                                  <input type="text" name="address" maxlength="100" class="form-control" required id="id_address">
+
+                           <div class="form-group mb-3">
+                               <label for="id_country">Country:</label>
+                                  <input type="text" name="country" maxlength="100" class="form-control" required id="id_country">
+
+                           <div class="form-group mb-3">
+                               <label for="id_state">State:</label>
+                                  <input type="text" name="state" maxlength="100" class="form-control" required id="id_state">
+
+                           <div class="form-group mb-3">
+                               <label for="id_city">City:</label>
+                                  <input type="text" name="city" maxlength="100" class="form-control" required id="id_city">
+
+                           <div class="form-group mb-3">
+                               <label for="id_mobile_no">Mobile no:</label>
+                                  <input type="text" name="mobile_no" maxlength="100" class="form-control" required id="id_mobile_no">
+
+                           <div class="form-group mb-3">
+                               <label for="id_aadhar_no">Aadhar no:</label>
+                                  <input type="text" name="aadhar_no" maxlength="100" class="form-control" required id="id_aadhar_no">
+
+
+
+
+
+
+        <div class="mb-3">
+            <label for="">Select a guest house</label>
+            <select class="form-select form-control" name="guesthouse" id="guesthouse">
+                <option value="">Select a guest house</option>
+                {% for guesthouse in guesthouses %}
+                    <option value="{{ guesthouse.id }}">{{ guesthouse.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="">Select a room category</label>
+            <select class="form-select form-control" name="room_category" id="room_category">
+                <option value="">Select a room category</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="">Select a guest category</label>
+            <select class="form-select form-control" name="guest_category" id="guest_category">
+                <option value="">Select a guest category</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="">How many Rooms you want to book</label>
+            <input class="form-control mr-sm-2" type="number" placeholder="How many Rooms you want to book" name="rooms_no" >
+        </div>
+        {%load app_tags%}
+        <div class="mb-3">
+            <label for="">Check in</label>
+            <input class="form-control mr-sm-2" type="date" placeholder="Check in" name="cin" min={%todays_date%} max={% max_date %} aria-label="Search" required="True">
+        </div>
+        <div class="mb-3">
+            <label for="">Check Out</label>
+            <input class="form-control mr-sm-2" type="date" placeholder="Check out" name="cout" min={%tommorow%} max={% max_date%} aria-label="Search" required="True">
+        </div>
+        <div class="mb-3">
+            <label for="">Check Out</label>
+            <input class="form-control mr-sm-2" type="date" placeholder="Check out" name="cout" min={%tommorow%} max={% max_date%} aria-label="Search" required="True">
+        </div>
+        <div class="mb-3">
+            <a type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                The normal Guest house  policy is not to charge for children if they are under eleven years of age
+            </a>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="submit">Check Availablity</button>
+        </div>
+    </div>
+</div>
+
+</form>
+                            </div>
+                        </div>
+                    </div>
+
+
+{% endblock content %}
+

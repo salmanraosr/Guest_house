@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<br>
+
+
+<div class="container overflow-hiddenm p-5 shadow pt-5">
+<div class="p-5">
+    <h2>NIE Guest House Committee Members</h2></br>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+        <thead class="table-info">
+              <tr>
+                <th>SNo.</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Photograph</th>
+              </tr>
+            </thead>
+        <tbody>
+                <tr>
+                    <td>1. </td>
+                    <td>Dr. P D Subhash<br>
+                        Mob: 8810240481</td>
+                    <td>Chairperson, NIEGH & Associate Professor, PMD</td>
+                    <td><img  src="{% static 'images/commette/pdsubhash.jpg'%}" alt=""></td>
+                </tr>
+                <tr>
+                    <td>2. </td>
+                    <td>Smt. Pushplata Verma</td>
+                    <td>Associate Professor, DESM</td>
+                    <td><img  src="{% static 'images/commette/pushpalata.jpg'%}" alt=""></td>
+                </tr>
+                <tr>
+                    <td>3. </td>
+                    <td>Dr. K. Vijayan </td>
+                    <td>Assistant Professor, DTE</td>
+                    <td><img  src="{% static 'images/commette/vijayan.jpg'%}" alt=""></td>
+                </tr>
+                <tr>
+                    <td>4. </td>
+                    <td>Shri N.L. Srinivas</td>
+                    <td>Sr. System Analyst, ESD & I/c CRC</td>
+                    <td><img  src="{% static 'images/commette/nl.jpg'%}" alt=""></td>
+                </tr>
+                <tr>
+                    <td>5. </td>
+                    <td>Shri Mahavir Singh </td>
+                    <td>Under Secretary, C&W</td>
+                    <td><img src="{% static 'images/commette/mahavir.jpg'%}" alt=""></td>
+                </tr>
+                <tr>
+                    <td>6. </td>
+                    <td>Shri Vikram<br>Mob: 9811684152</td>
+                    <td>I/c Manager, NIEGH</td>
+                    <td><img src="{% static 'images/commette/user-place2.jpg'%}" alt=""></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+    </div>
+{% endblock content %}

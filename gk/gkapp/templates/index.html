@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<br>
+
+
+
+
+<div class="container overflow-hiddenm p-5 shadow pt-5">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Click
+    here to Check Availablity</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Check Availablity</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{% url 'homepage' %}">
+            {% csrf_token %}
+            <div class="row ">
+                <div class="mb-3">
+                    <label for="">Select a guest house</label>
+                    <select class="form-select form-control" name="guesthouse" id="guesthouse">
+                        <option value="">Select a guest house</option>
+                        {% for guesthouse in guesthouses %}
+                            <option value="{{ guesthouse.id }}">{{ guesthouse.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                     <label for="">Select a room category</label>
+                    <select class="form-select form-control" name="room_category" id="room_category">
+                        <option value="">Select a room category</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                     <label for="">Select a guest category</label>
+                    <select class="form-select form-control" name="guest_category" id="guest_category">
+                        <option value="">Select a guest category</option>
+                    </select>
+                </div>
+
+                 <div class="mb-3">
+                     <label for="">How many Rooms you want to book</label>
+                    <input class="form-control mr-sm-2" type="number" placeholder="How many Rooms you want to book" name="rooms_no" >
+                </div>
+                {%load app_tags%}
+                <div class="mb-3">
+                    <label for="">Check in</label>
+                    <input class="form-control mr-sm-2" type="date" placeholder="Check in" name="cin" min={%todays_date%} max={% max_date %} aria-label="Search" required="True">
+                </div>
+                <div class="mb-3">
+                    <label for="">Check Out</label>
+                    <input class="form-control mr-sm-2" type="date" placeholder="Check out" name="cout" min={%tommorow%} max={% max_date%} aria-label="Search" required="True">
+                </div>
+
+
+                    <div class="mb-3">
+                                       <a type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                   The normal Guest house  policy is not to charge for children if they are under eleven years of age
+                    </a>
+                </div>
+
+
+
+
+                 <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" type="submit">Check Availablity</button>
+      </div>
+            </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<h1>&nbsp;</h1>
+
+
+
+	<div>
+      <div class="p-5  text-dark rounded-bottom">
+        <h4>NIE Guest House (NIE-GH) and PG Hostel (PGH)
+          <hr>
+        </h4>
+        <p>National Council of Educational Research and Training (NCERT), Sri Aurobindo Marg, New Delhi
+          offers two accommodation facilities, namely, the National Institute of Education Guest House (NIEGH) and
+          PG Hostel (PGH), located within the NCERT Campus. These Guest Houses are primarily
+          meant for official guests of the NCERT, including Experts, Teachers, Teacher Educators, Students, etc.
+          invited by the Council to contribute/attend Seminars, Workshops, Conferences, Training Programs,
+          etc. organized by the Council. The Guest House has a capacity of 02 VIP Suites and 48 fully
+          furnished AC Rooms. Similarly, the PG Hostel has a capacity of 64 fully furnished AC Rooms. There
+          are two dining halls with the seating capacity of upto 60 and 20 persons.</p>
+      </div>
+
+      <div class="row featurette px-5">
+        <div class="col-md-6" >
+          <img style="border-radius: 15px;" class="border border-3 border-secondary rounded-5 shadow img-fluid mx-auto" width="500" height="500"
+          src="{% static 'images/niegh_front.jpg'%}"  role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+            focusable="false" />
+          <h4 class="text-center">NIE-GH</h4>
+        </div>
+        <div class="col-md-6 ">
+          <img style="border-radius: 15px;" class="border border-3 border-secondary rounded-5 shadow img-fluid mx-auto" width="500" height="500"
+              src="{% static 'images/nie_pgh.jpg'%}" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+            focusable="false" />
+          <h4 class="text-center">NIE-PGH</h4>
+          <div id="category"></div>
+        </div>
+      </div>
+      <div id="category"></div>
+
+      <hr>
+      <div class="px-5">
+        <h2>Categories</h2>
+
+        <div class="p-2">
+          <p><b>Category ‘A’ (For Internal Guest- Indian Nationals Only)</b></p>
+          <div class="p-1">
+            <ol>
+              <li> &nbsp;Non-NCERT persons invited by the Council for attending conference/ seminar/ workshop/ meeting/
+                programmes/ other official work etc. in NCERT.</li>
+              <li> &nbsp;NCERT officials/employees on intra-institutional deputation to NCERT Hqr.</li>
+              <li> &nbsp;Council employees including their family members as defined under FR & SR 2 (i.e. Council’s
+                employees and their spouse and legitimate children wholly dependent and residing with the employees) on
+                LTC/personal work subject to submission of a formal request well in advance indicating the details of
+                each member (viz, name, relationship with Council employee and full dependency certificate etc. in
+                respect of each family member and duly forwarded/ verified/ & recommended by their branch officer etc.)
+              </li>
+              <li> &nbsp;Council’s Formers Directors/Joint Directors/ Principals/ Pensioners and their dependent family
+                members (retired employees on superannuation/on voluntary retirement including their dependent family
+                members) on their personal work subject to submission of a formal request along with copy of Council’s
+                retired person certificate and full dependency certificate in respect of family members of the retired
+                person/pensioner as recorded in retirement certificate.
+              </li>
+              <li> &nbsp; Staff engaged by the Council on contract basis for their official work subject to
+                recommendation from their Heads of the Department/ Branch Officer/ Administrative Head (i.e., DS/US)
+                etc.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="p-2">
+          <p><b>Category ‘B’ (For external Guests (Indian Nationals Only)</b></p>
+          <div class="p-1">
+            <ol>
+              <li>&nbsp;Faculty members & other staffs of Academic Institutions such as. University/ NVS/ IKVS/
+                CBSE/SIE/SCERT/Technical Institutions and officials of Central and State Governments and their
+                undertaking bodies or experts invited by NGOs/other organizations for their meetings/conference/workshop
+                etc.
+              </li>
+              <li>&nbsp;Staff deployed by the Council on contract basis for their personal work subject to
+                recommendation from their Heads of Department/ Branch Officer/ Administrative Heads (i.e., DS/US) etc.
+              </li>
+              <li>&nbsp;Research scholars/students from various Universities/Educational/Technical Institutions for
+                library consultation/data collection work with certificates from their Institutional/Departmental
+                Heads/Research Supervisors etc.</li>
+              <li>&nbsp;Guests of President/Vice-President/Prime Minister of India/MOE/HRM/MOS (MOE) office and other
+                Ministries.</li>
+              <li>&nbsp;Any other Indian guest with the approval of the Director/Joint Director, Joint Director, CIET/
+                Secretary, NCERT/Chairperson, NIEGH/PGH visiting NCERT on official purposes.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="p-2">
+          <p><b>Category ‘C’ (International Guests)</b></p>
+          <div class="p-1 text-wrap">
+            <ol>
+              <li>&nbsp;International guests sponsored by NCERT/ MOE/other Academic/Non-Governmental Organizations
+                working in the field of education subject to verification of their documents and recommendations from
+                Head, IRD/approval from the Competent Authority at NCERT Hq.</li>
+              <li>&nbsp;International guests sponsored by MEA and /or any other Ministry under GOI under International
+                Technical & Educational Co-operation programme for training in NCERT/other Academic Institution in
+                Delhi.</li>
+              <li>&nbsp;Requests from Institutions from abroad for training programmes involving NCERT/any Constituent
+                Unit of NCERT.</li>
+              <li>&nbsp;Sponsored by GoI Institutions from within India.</li>
+            </ol>
+
+          </div>
+          <p><b>If you fall in any of the categories mentioned, can navigate through tabs for futher booking process.</b></p>
+        </div>
+      </div>
+
+
+
+
+
+<!--        <form method="post" action="{% url 'homepage' %}">-->
+<!--            {% csrf_token %}-->
+<!--            <div class="row ">-->
+<!--                <div class="col-lg-2">-->
+<!--                    <label for="">Select a guest house</label>-->
+<!--                    <select class="form-select form-control" name="guesthouse" id="guesthouse">-->
+<!--                        <option value="">Select a guest house</option>-->
+<!--                        {% for guesthouse in guesthouses %}-->
+<!--                            <option value="{{ guesthouse.id }}">{{ guesthouse.name }}</option>-->
+<!--                        {% endfor %}-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--                <div class="col-lg-2">-->
+<!--                     <label for="">Select a room category</label>-->
+<!--                    <select class="form-select form-control" name="room_category" id="room_category">-->
+<!--                        <option value="">Select a room category</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--                <div class="col-lg-2">-->
+<!--                     <label for="">Select a guest category</label>-->
+<!--                    <select class="form-select form-control" name="guest_category" id="guest_category">-->
+<!--                        <option value="">Select a guest category</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--                {%load app_tags%}-->
+<!--                <div class="col-lg-2">-->
+<!--                    <label for="">Check in</label>-->
+<!--                    <input class="form-control mr-sm-2" type="date" placeholder="Check in" name="cin" min={%todays_date%} max={% max_date %} aria-label="Search" required="True">-->
+<!--                </div>-->
+<!--                <div class="col-lg-2">-->
+<!--                    <label for="">Check Out</label>-->
+<!--                    <input class="form-control mr-sm-2" type="date" placeholder="Check out" name="cout" min={%tommorow%} max={% max_date%} aria-label="Search" required="True">-->
+<!--                </div>-->
+<!--                <div class="col-2">-->
+<!--                    <button class="btn btn-primary" type="submit">Search</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+
+               {% if room_rates %}
+                <p class="text-center text-success pt-5">Rooms Available</p>
+                {% endif %}
+
+
+
+{% if room_rates %}
+
+{% for room_rate in room_rates %}
+        <div class="row pt-5">
+                    <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/vipsuite1.jpeg'%}" class="img-responsive card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ room_rate.room_category_id }}</h5>
+                        <a href="customer/request" class=" btn btn-primary ">Make a Request</a>
+
+                    </div>
+                </div>
+                    </div>
+ {% endfor %}
+
+
+
+{% endif %}
+<!--        <h1 class="text-center pt-5">Our Rooms</h1>-->
+<!--        <div class="row pt-5">-->
+<!--            <div class="col-3">-->
+<!--                <div class="card" style="width: 18rem;">-->
+<!--                    <img src="{% static 'images/vipsuite1.jpeg'%}" class="img-responsive card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">VIP Suite</h5>-->
+<!--                        <a href="#" class="btn btn-primary">Make a Request</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--             <div class="col-3">-->
+<!--                <div class="card" style="width: 18rem;">-->
+<!--                    <img src="{% static 'images/vipsuite1.jpeg'%}" class="img-responsive card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">VIP Suite</h5>-->
+<!--                        <a href="#" class="btn btn-primary">Make a Request</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+<!--             <div class="col-3">-->
+<!--                <div class="card" style="width: 18rem;">-->
+<!--                    <img src="{% static 'images/vipsuite1.jpeg'%}" class="img-responsive card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">VIP Suite</h5>-->
+<!--                        <a href="#" class="btn btn-primary">Make a Request</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--             <div class="col-3">-->
+<!--                <div class="card" style="width: 18rem;">-->
+<!--                    <img src="{% static 'images/vipsuite1.jpeg'%}" class="img-responsive card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">VIP Suite</h5>-->
+<!--                        <a href="#" class="btn btn-primary">Make a Request</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+{% endblock content %}

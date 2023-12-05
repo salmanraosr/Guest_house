@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{%load static %}
+{%block content%}
+<div class="container shadow">
+    <div class="p-5">
+        <h3>Booking Procedure</h3><br>
+        <div class="table-responsive ">
+            <table class="table table-bordered align-middle p-5">
+                <thead class="table-info">
+                    <tr>
+
+                        <th colspan="1" class="text-center">Category</th>
+                        <th colspan="2" class="text-center">VIP Suite</th>
+                        <th colspan="2" class="text-center">NIE-GH</th>
+                        <th colspan="1" class="text-center">PGH</th>
+                        <th  class="text-center">Procedure</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td colspan="1"></td>
+                        <th colspan="1">Single Occupancy</th>
+                        <th colspan="1">Twin Sharing</th>
+                        <th colspan="1">Single Occupancy</th>
+                        <th colspan="1">Twin Sharing</th>
+                        <th colspan="1">Single Occupancy</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="1"><b>‘A’</b> Internal Guest (Indian Nationals Only)</td>
+                        <td colspan="1" class="text-center">₹ 1600/-</td>
+                        <td colspan="1" class="text-center">₹ 2500/-</td>
+                        <td colspan="1" class="text-center">₹ 600/-</td>
+                        <td colspan="1" class="text-center">₹ 1000/-</td>
+                        <td colspan="1" class="text-center">₹ 200/-</td>
+                        <td rowspan="2" >All the bookings for accommodation in Category ‘A’ & ‘B’ to be applied through</br>
+                            <a href="mailto:nieghncert@gmail.com">nieghncert@gmail.com</a></td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="1"><b>‘B’</b> External Guest (Indian Nationals Only)</td>
+                            <td colspan="1" class="text-center">₹ 2000/-</td>
+                            <td colspan="1" class="text-center">₹ 3000/-</td>
+                            <td colspan="1" class="text-center">₹ 800/-</td>
+                            <td colspan="1" class="text-center">₹ 1200/-</td>
+                            <td colspan="1" class="text-center">₹ 300/-</td>
+                        </tr>
+
+                        <tr>
+
+                            <td colspan="1" ><b>‘C’</b> International Guests</td>
+                            <td colspan="1" class="text-center">₹ 3200/-</td>
+                            <td colspan="1" class="text-center">₹ 5000/-</td>
+                            <td colspan="1" class="text-center">₹ 2500/-</td>
+                            <td colspan="1" class="text-center">-</td>
+                            <td colspan="1" class="text-center">₹ 800/-</td>
+                            <td rowspan="2" >All the bookings for accommodation in Category
+                                ‘C’ to be applied through</br>
+                                <a href="mailto:irdncert@gmail.com">irdncert@gmail.com</a>
+                                <br>Cc to:
+                                <a href="mailto:secy.ncert@nic.in">secy.ncert@nic.in</a>,
+                                <a href="mailto:nieghncert@gmail.com">nieghncert@gmail.com</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+                <p><b>Check-In/Check-Out:</b> The check-in time is flexible. However, the checkout time is <b>12:00 PM</b>.</p>
+                <br>
+                <p><b>Requisition form for booking of Guest House &amp; PG Hostel (For Category 'A' only) by the Constituent units of NCERT</b>
+                    <a href="pdf/Requisition_NIE_GUEST_HOUSE.pdf" target="_blank">Click here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

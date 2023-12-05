@@ -1,0 +1,81 @@
+
+{% extends "staffbase.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+   <div class="container-fluid">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Guest House List</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+
+                                                 <th>Serial No </th>
+                                            <th>Guest House </th>
+                                            <th>Room categories </th>
+                                            <th>Rooms </th>
+                                            <th>Employee </th>
+                                             <th>Customer</th>
+                                            <th>Room Rate</th>
+                                            <th>Check in </th>
+                                             <th>Check out</th>
+                                            <th>No of Days</th>
+                                            <th>Total Amount</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                             <th>Serial No </th>
+                                            <th>Guest House </th>
+                                            <th>Room categories </th>
+                                            <th>Rooms </th>
+                                            <th>Employee </th>
+                                             <th>Customer</th>
+                                            <th>Room Rate</th>
+                                            <th>Check in </th>
+                                             <th>Check out</th>
+                                            <th>No of Days</th>
+                                            <th>Total Amount</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+
+{% for reservation in reservation %}
+    <tr>
+          <td>{{ forloop.counter }}</td>
+        <td>{{ reservation.GuestHouses }}</td>
+        <td>{{ reservation.RoomCategories}}</td>
+        <td>{{ reservation.rooms }}</td>
+         <td>{{ reservation.employee }}</td>
+         <td>{{ reservation.customer }}</td>
+         <td>{{ reservation.room_rate }}</td>
+        <td>{{ reservation.checkin }}</td>
+         <td>{{ reservation.checkout }}</td>
+         <td>{{ reservation.no_of_days }}</td>
+        <td>{{ reservation.total_amount }}</td>
+        <td>
+            <a class="btn btn-success" href="#"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a  class="btn btn-danger" href="#">Delete</a>
+
+        </td>
+    </tr>
+{% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+{% endblock content %}

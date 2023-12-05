@@ -1,0 +1,45 @@
+{% extends "staffbase.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+     <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="card">
+                <div class="card-header text-black">
+                  <h2>Customer Request Approval </h2>
+                </div>
+                <div class="card-body">
+                   <form method="POST" class="post-form" action="/update/{{employee.id}}">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        {% for field in form %}
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">{{ field.label }}</label>
+                <div class="col-sm-4">
+                    {{ field }}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+                    <br>
+
+                 </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </section>
+{% endblock content %}
